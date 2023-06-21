@@ -29,8 +29,8 @@ public class CarRepository {
     public  List<Car> getAllByYear(Integer year){
         return carCRUDRepository.findByYear(year);
     }
-    public Optional<Car> getById(Integer id){
-        return  carCRUDRepository.findById(id);
+    public Optional<Car> getById(Integer carId){
+        return  carCRUDRepository.findById(carId);
 
     }
 
@@ -43,7 +43,7 @@ public class CarRepository {
 
     }
 
-    public void delete (Car car){ // void por que no retorna nada
+    public void delete(Car car){ // void por que no retorna nada
         carCRUDRepository.delete(car);
     }
 }
