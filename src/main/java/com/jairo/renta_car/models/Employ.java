@@ -19,4 +19,32 @@ public class Employ implements Serializable {
     @ManyToMany(mappedBy = "employees")
     private Set<Reservation> reservations;// Conjunto en vez de una lista
 
+    public Integer getIdEmployed() {
+        return idEmployed;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Boolean getIs_admin() {
+        return is_admin;
+    }
+
+    public void setIs_admin(Boolean is_admin) {
+        this.is_admin = is_admin;
+    }
+
+    public Set<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(Set<Reservation> reservations) {
+        this.reservations = reservations;
+    }
 }

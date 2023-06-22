@@ -20,4 +20,33 @@ public class CarType implements Serializable {
     @JsonIgnoreProperties("carTypeFK")//Ignora las propiedades de ese campo
     private List<Car> cars; //atributo de lista de carros que van hacer los campos que el va a tener
 
+    public Integer getCarTypeId() {
+        return carTypeId;
+    }
+
+
+
+    public String getLine() {
+        return line;
+    }
+
+    public void setLine(String line) {
+        this.line = line;
+    }
+
+    public String getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
+    }
+
+    public List<Car> getCars() {
+        return cars;
+    }
+
+    public void setCars(List<Car> cars) {
+        this.cars = cars;
+    }
 }

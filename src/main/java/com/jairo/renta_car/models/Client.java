@@ -30,4 +30,73 @@ public class Client  implements Serializable {
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "clientFK")
     @JsonIgnoreProperties("clientFk")
     private List<Reservation> reservations;
+
+    public Integer getIdClient() {
+        return idClient;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhones() {
+        return phones;
+    }
+
+    public void setPhones(String phones) {
+        this.phones = phones;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public List<PQR> getPqrs() {
+        return pqrs;
+    }
+
+    public void setPqrs(List<PQR> pqrs) {
+        this.pqrs = pqrs;
+    }
+
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
+    }
 }
