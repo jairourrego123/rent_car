@@ -14,29 +14,43 @@ public class CarServices {
     private CarRepository carRepository;
 
     public List<Car> getAllCar(){
-
+    return carRepository.getAll();
     }
     public List<Car> getAllCarByYear(Integer year){
+
+        if (year<1950)
+            return  null;
+        return carRepository.getAllByYear(year);
         
     }
 
-   public Optional<Car> GetById(Integer id){
+   public Optional<Car> getCarById(Integer carId){
+        
+        return carRepository.getById(carId);
 
    }
 
-   public Optional<Car> getCarByPlate(Spring plate){
+   public Optional<Car> getCarByPlate(String plate){
+
+       // TODO: 25/06/2023 Verify plate  regular expression (regex):[A-Z]^3-[0-9]^3
+       return carRepository.getByPlate(plate);
 
    }
 
-    public Car insertCar(Car car){
+    public Car insertCar(Car car){ // Guardar informacion
 
     }
 
-    public Car updateCar(Car car){
+    public Car updateCar(Car car){ // Actualizar
 
     }
     public boolean deleteCar(Integer carId){
+     Boolean success = getCarById(carId).map(car -> {
+         carRepository.delete(car);
+         return true;
 
+     }).orElse(false);
+     return success;
     }
 
 }
