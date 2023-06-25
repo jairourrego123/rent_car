@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface ReservationCRUDRepository extends CrudRepository<Reservation,Integer> {
     @Query(value = "SELECT * FROM reservations WHERE start_date >= ? and end_Date <= ?;",nativeQuery = true)
-    public List<Reservation> findReservationByDatesAndStatus(String s_date,String e_date);
+    public List<Reservation> findReservationByDates(String s_date,String e_date);
 }

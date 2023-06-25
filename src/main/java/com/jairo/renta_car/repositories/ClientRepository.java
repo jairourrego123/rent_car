@@ -1,7 +1,6 @@
 package com.jairo.renta_car.repositories;
 
 import com.jairo.renta_car.models.Client;
-import org.hibernate.query.NativeQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -13,17 +12,29 @@ public class ClientRepository {
     @Autowired
     private ClientCRUDRepository clientCRUDRepository;
 
-    private List<Client> getAll(){
+
+    public List<Client> getAll(){
+
         return (List<Client>) clientCRUDRepository.findAll();
     }
 
-    private Optional<Client> getById(Integer clientId){
+    public Optional<Client> getById(Integer clientId){
+
         return clientCRUDRepository.findById(clientId);
     }
-    private Client save(Client client){
+    public  Optional<Client> getByEmail(String email){
+        return clientCRUDRepository.findByEmail(email);
+    }
+
+    public Optional<Client> getByNickName(String nickName){
+        return clientCRUDRepository.fndByNickName(nickName);
+    }
+    public Client save(Client client){
+
         return clientCRUDRepository.save(client);
     }
-    private void delete(Client client){
+    public void delete(Client client){
+
         clientCRUDRepository.delete(client);
     }
 }

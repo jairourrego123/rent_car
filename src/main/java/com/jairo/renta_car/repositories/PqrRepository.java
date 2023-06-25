@@ -12,16 +12,16 @@ public class PqrRepository {
     @Autowired
     private PqrCRUDRepository pqrCRUDRepository;
 
-    private List<PQR> getAll(){
+    public List<PQR> getAll(){
         return (List<PQR>) pqrCRUDRepository.findAll();
     }
-    private Optional<PQR> getById(Integer pqrId){
+    public Optional<PQR> getById(Integer pqrId){
         return pqrCRUDRepository.findById(pqrId);
     }
-    private PQR save(PQR pqr){
+    public PQR save(PQR pqr){
         return pqrCRUDRepository.save(pqr);
     }
-    private void delete(PQR pqr){
+    public void delete(PQR pqr){
         pqrCRUDRepository.delete(pqr);
     }
 }

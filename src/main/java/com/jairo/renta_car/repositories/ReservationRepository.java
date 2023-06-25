@@ -13,17 +13,21 @@ public class ReservationRepository {
     @Autowired
     private ReservationCRUDRepository reservationCRUDRepository;
 
-    private List<Reservation> getAll(){
+    public List<Reservation> getAll(){
         return (List<Reservation>) reservationCRUDRepository.findAll();
     }
-    private Optional<Reservation> getById(Integer reservationId){
+
+    public List<Reservation>  getAllByDates(String start_data,String end_data){
+        return reservationCRUDRepository.findReservationByDates(start_data,end_data);
+    }
+    public Optional<Reservation> getById(Integer reservationId){
         return reservationCRUDRepository.findById(reservationId);
     }
-    private Reservation save(Reservation reservation){
+    public Reservation save(Reservation reservation){
         return reservationCRUDRepository.save(reservation);
 
     }
-    private void delete (Reservation reservation){
+    public void delete (Reservation reservation){
         reservationCRUDRepository.delete(reservation);
 
     }

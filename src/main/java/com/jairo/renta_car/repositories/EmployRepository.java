@@ -12,16 +12,16 @@ public class EmployRepository {
     @Autowired
     private EmployCRUDRepository employCRUDRepository;
 
-    private List<Employ> getAll(){
+    public List<Employ> getAll(){
         return (List<Employ>) employCRUDRepository.findAll();
     }
-    private Optional<Employ> getById(Integer employId){
+    public Optional<Employ> getById(Integer employId){
         return employCRUDRepository.findById(employId);
     }
-    private Employ salve(Employ employ){
+    public Employ salve(Employ employ){
         return employCRUDRepository.save(employ);
     }
-    private void delete(Employ employ){
+    public void delete(Employ employ){
         employCRUDRepository.delete(employ);
     }
 }
