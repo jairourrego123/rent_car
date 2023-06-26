@@ -109,4 +109,8 @@ public class Reservation implements Serializable {
     public void setEmployees(Set<Employ> employees) {
         this.employees = employees;
     }
+
+    public Integer getIdReservation() {
+        return idReservation;
+    }
 }
