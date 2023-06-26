@@ -6,15 +6,15 @@ import java.io.Serializable;
 import java.util.Set;
 
 @Entity
-@Table(name = "emproyees")
+@Table(name = "employees")
 public class Employ implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idEmployed;
     @Column(length = 50,nullable = false)
     private String name;
-    @Column(nullable = false)
-    private Boolean is_admin = false;
+
+    private Boolean isAdmin = false;
 
     @ManyToMany(mappedBy = "employees")
     private Set<Reservation> reservations;// Conjunto en vez de una lista
@@ -32,12 +32,12 @@ public class Employ implements Serializable {
         this.name = name;
     }
 
-    public Boolean getIs_admin() {
-        return is_admin;
+    public Boolean getIsAdmin() {
+        return isAdmin;
     }
 
-    public void setIs_admin(Boolean is_admin) {
-        this.is_admin = is_admin;
+    public void setIsAdmin(Boolean isAdmin) {
+        this.isAdmin = isAdmin;
     }
 
     public Set<Reservation> getReservations() {
