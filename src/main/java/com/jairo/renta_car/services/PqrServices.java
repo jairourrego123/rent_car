@@ -20,10 +20,25 @@ public class PqrServices {
         return pqrRepository.getById(pqrId);
     }
     public  PQR insertPqr(PQR pqr){
+        if ((pqr.getType()!=null)&&(pqr.getContent()!=null) && (pqr.getClientFK()!=null))
+            return pqrRepository.save(pqr);
+        else
+            return pqr;
 
     }
     public  PQR updatePqr(PQR pqr){
-
+        if(pqr.getIdPqr()!=null){
+            Optional<PQR> temp = getPQRById(pqr.getIdPqr());
+            if (temp.isPresent()){
+                if (pqr.getContent()!=null)
+                    temp.get().setContent(pqr.getContent());
+                return pqrRepository.save(temp.get());
+            }
+            else
+                return pqr;
+        }
+        else
+            return pqr;
     }
     public boolean deletePqr(Integer pqrId){
     Boolean success = getPQRById(pqrId).map(pqr -> {

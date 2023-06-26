@@ -20,10 +20,27 @@ public class EmployServices {
         return employRepository.getById(employId);
     }
     public Employ insertEmployees (Employ employ){
-
+        if (employ.getName()!=null)
+            return employRepository.salve(employ);
+        else
+            return employ;
     }
     public  Employ updateEmployees(Employ employ){
+        if (employ.getIdEmployed()!=null){
+            Optional<Employ> temp = getEmployeesById(employ.getIdEmployed());
+            if (temp.isPresent()){
+                if (employ.getIsAdmin()!=null)
+                    temp.get().setIsAdmin(employ.getIsAdmin());
+                if (employ.getName()!=null)
+                    temp.get().setName(employ.getName());
+                return employRepository.salve(temp.get());
 
+            }
+            else
+                return employ;
+        }
+        else
+            return employ;
     }
     public boolean deleteEmploy(Integer employId){
         Boolean success= getEmployeesById(employId).map(employ -> {

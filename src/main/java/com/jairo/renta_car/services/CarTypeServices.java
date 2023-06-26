@@ -24,9 +24,28 @@ public class CarTypeServices {
     }
 
     public CarType insertCarType(CarType carType){
+        if(carType.getLevel()!=null)
+            return carTypeRepository.save(carType);
+        else
+            return carType;
 
     }
     public  CarType updateCartype(CarType carType){
+        if(carType.getCarTypeId()!=null)
+        {
+            Optional<CarType> temp = carTypeRepository.getById(carType.getCarTypeId());
+            if (temp.isPresent()){
+                if (carType.getLevel()!=null)
+                    temp.get().setLevel(carType.getLevel());
+                if (carType.getLine()!=null)
+                    temp.get().setLine(carType.getLine());
+                return carTypeRepository.save(temp.get());
+            }
+            else
+                return carType;
+        }
+        else
+            return carType;
 
     }
 

@@ -38,11 +38,35 @@ public class CarServices {
    }
 
     public Car insertCar(Car car){ // Guardar informacion
-
+        if((car.getPlate()!=null) && (car.getYear()!=null) && (car.getBrand()!=null) &&
+                (car.getColor() !=null ) && car.getCarTypeFK() !=null){
+          Optional<Car> temp = carRepository.getByPlate(car.getPlate());
+          if (temp.isEmpty() && car.getYear() > 1950)
+              return carRepository.save(car);
+          else
+              return car;
+        }
+        else
+            return car;
     }
 
     public Car updateCar(Car car){ // Actualizar
-
+        if (car.getIdCar()!= null){
+            Optional<Car> temp = carRepository.getById(car.getIdCar());
+            if (temp.isPresent()){
+                if (car.getBrand()!= null)
+                    temp.get().setBrand(car.getBrand());
+                if (car.getColor()!= null)
+                    temp.get().setColor(car.getColor());
+                if (car.getCarTypeFK() !=null)
+                    temp.get().setCarTypeFK(car.getCarTypeFK());
+                return carRepository.save(temp.get());
+            }
+            else
+                return car;
+        }
+        else
+            return car;
     }
     public boolean deleteCar(Integer carId){
      Boolean success = getCarById(carId).map(car -> {
