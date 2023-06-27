@@ -20,7 +20,7 @@ public class Client  implements Serializable {
     @Column(length = 50,nullable = false,unique = true)
     private  String email;
 
-    private String nickname;
+    private String nickName;
     private  String password;
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "clientFK")
@@ -69,11 +69,11 @@ public class Client  implements Serializable {
     }
 
     public String getNickname() {
-        return nickname;
+        return nickName;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
+    public void setNickname(String nickName) {
+        this.nickName = nickName;
     }
 
     public String getPassword() {
