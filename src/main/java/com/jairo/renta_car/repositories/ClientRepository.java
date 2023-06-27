@@ -27,7 +27,7 @@ public class ClientRepository {
     }
 
     public Optional<Client> getByNickName(String nickName){
-        return clientCRUDRepository.fndByNickName(nickName);
+        return clientCRUDRepository.findByNickName(nickName);
     }
     public Client save(Client client){
 
