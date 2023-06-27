@@ -3,11 +3,12 @@ package com.jairo.renta_car.services;
 import com.jairo.renta_car.models.PQR;
 import com.jairo.renta_car.repositories.PqrRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.swing.plaf.PanelUI;
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class PqrServices {
 
     @Autowired

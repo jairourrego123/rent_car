@@ -4,10 +4,12 @@ import com.jairo.renta_car.models.Reservation;
 import com.jairo.renta_car.repositories.ReservationRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class ReservationServices {
 
     @Autowired

@@ -3,10 +3,11 @@ package com.jairo.renta_car.services;
 import com.jairo.renta_car.models.Client;
 import com.jairo.renta_car.repositories.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class ClientServices {
 
     @Autowired
@@ -85,7 +86,7 @@ public class ClientServices {
         else
             return client;
     }
-    private boolean deleteClient(Integer clientId){
+    public boolean deleteClient(Integer clientId){
         Boolean success = getClientById(clientId).map(client -> {
             clientRepository.delete(client);
             return true;

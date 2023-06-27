@@ -3,11 +3,12 @@ package com.jairo.renta_car.services;
 import com.jairo.renta_car.models.Car;
 import com.jairo.renta_car.repositories.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.swing.*;
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class CarServices {
 
     @Autowired
@@ -16,7 +17,7 @@ public class CarServices {
     public List<Car> getAllCar(){
     return carRepository.getAll();
     }
-    public List<Car> getAllCarByYear(Integer year){
+    public List<Car> getAllCarsByYear(Integer year){
 
         if (year<1950)
             return  null;
