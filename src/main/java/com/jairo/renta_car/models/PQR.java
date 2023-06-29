@@ -15,8 +15,8 @@ public class PQR implements Serializable {
     private  String type;
     @Column(length = 300)
     private String content;
-
-    //TODO add relation with client
+    @Column(nullable = false)
+    private String creationDate;
     @ManyToOne
     @JoinColumn(name="idClient")
     @JsonIgnoreProperties("pqrs")
@@ -50,6 +50,14 @@ public class PQR implements Serializable {
 
     public void setClientFK(Client clientFK) {
         this.clientFK = clientFK;
+    }
+
+    public String getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(String creationDate) {
+        this.creationDate = creationDate;
     }
 }
 
