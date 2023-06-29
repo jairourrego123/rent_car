@@ -37,6 +37,8 @@ public class ClientServices {
                 if (tempId.isPresent()) // There is a client in the database with the same id
                     return client;
                 if (client.getEmail()!=null){
+                    if(!Utilities.validateEmail(client.getEmail()))
+                        return  client;
                     //todo validate regex[a-z0-9]^*@dpmain.com
                     Optional<Client> tempEmail= clientRepository.getByEmail(client.getEmail());
                     if (tempEmail.isPresent()) // There is a client in the database with the same email

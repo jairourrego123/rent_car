@@ -44,7 +44,7 @@ public class CarServices {
     public Car insertCar(Car car){ // Guardar informacion
         if((car.getPlate()!=null) && (car.getYear()!=null) && (car.getBrand()!=null) &&
                 (car.getColor() !=null ) && car.getCarTypeFK() !=null) {
-            if (Utilities.validatePlate(car.getPlate())) {
+            if (Utilities.validatePlate(car.getPlate())){
                 Optional<Car> temp = carRepository.getByPlate(car.getPlate());
                 if (temp.isEmpty() && car.getYear() > 1950)
                     return carRepository.save(car);
