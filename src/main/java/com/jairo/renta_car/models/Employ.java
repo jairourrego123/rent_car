@@ -1,6 +1,6 @@
 package com.jairo.renta_car.models;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 import java.io.Serializable;
 import java.util.Set;
