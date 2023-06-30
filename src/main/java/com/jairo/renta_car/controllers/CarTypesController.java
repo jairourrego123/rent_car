@@ -1,9 +1,8 @@
 package com.jairo.renta_car.controllers;
 
-import com.jairo.renta_car.models.Car;
 import com.jairo.renta_car.models.CarType;
 import com.jairo.renta_car.services.CarTypeServices;
-import org.hibernate.query.ReturnableType;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
