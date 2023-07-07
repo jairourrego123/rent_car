@@ -15,8 +15,8 @@
 </head>
 <body>
 <div class="container unauthenticated">
-
-    <a href="/oauth2/authorization/github">Para iniciar sesion con Github:haz click</a>
+    Para iniciar sesion con Github
+    <a href="/oauth2/authorization/github"> haz click</a>
 
 </div>
     <div class="container authenticated" style="...">
@@ -64,6 +64,8 @@
 
     </div>
 
+
+</body>
 <script type="text/javascript">
     $.get("/user",function (data){
         $("#username").html(data.name);
@@ -72,5 +74,4 @@
     });
 
 </script>
-</body>
 </html>
