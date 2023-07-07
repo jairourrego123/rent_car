@@ -14,8 +14,8 @@ import java.util.Objects;
 public class UserController {
     @GetMapping("/user")
     public Map<String, Objects> user(@AuthenticationPrincipal OAuth2User userInfo){ //un mapa (estructura clave valor) de Java , nos autenticamos y nos va a retornar un objeto Auth2User y lo vamos a llamar user Info
-        System.out.println(userInfo);
-        System.out.println(userInfo.getAttributes());
-        return Collections.singletonMap("name",userInfo.getAttribute("login")); // Arma un mapa con la clave name y el valor es del objeto userinfo traemos el atributo login
+       System.out.println(userInfo);
+       System.out.println(userInfo.getAttributes());
+        return Collections.singletonMap("name",userInfo.getAttribute("name")); // Arma un mapa con la clave name y el valor es del objeto userinfo traemos el atributo login
     }
 }
