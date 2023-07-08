@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Rent-A-Car Online</title>
+    <title>Reservations</title>
     <meta http-equiv="X-UA-Compatible" content="IE-Edge"/>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="author" content="Jairo Miller Urrego">
@@ -14,11 +14,7 @@
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="container unauthenticated">
-    Para iniciar sesion con Github
-    <a href="/oauth2/authorization/github"> haz click</a>
 
-</div>
     <div class="container authenticated" style="...">
         Autenticado como <span id="username"></span>
     </div>
@@ -52,20 +48,7 @@
 
     </div>
     <div class="container content">
-        <div class ="row">
-            <div class="col-6 col-md-6 col-sm-12">
-                <h1>Bienvenido a la plataforma de rente de carros.El mejor lugar para alquilarlos</h1>
-            </div>
-            <div class="col-6 col-md-6 col-sm-12">
-                Ofrecemos estos servicios:
-                <ul>
-                    <li>Renta de Carros</li>
-                    <li>Reserva Anticipada</li>
-                    <li>Cancelaci&oacute;n sin costo</li>
-                </ul>
-            </div>
 
-        </div>
     </div>
     <div class="container footer">
         <div class="row">
@@ -79,12 +62,5 @@
 
 
 </body>
-<script type="text/javascript">
-    $.get("/user",function (data){
-        $("#username").html(data.name);
-        $(".unauthenticated").hide()
-        $(".authenticated").show()
-    });
 
-</script>
 </html>
