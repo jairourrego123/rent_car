@@ -10,8 +10,11 @@
   <meta name="description" content="This is a website for a rent-a-car company">
   <base href="/">
   <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="css/base_styles.css"/>
+
   <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
   <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/clients.js"></script>
 </head>
 <body>
 
@@ -61,7 +64,7 @@
   </div>
   <div class="row table">
     <div class="col">
-      <table id="tbClients" class="tbData">
+      <table id="tblClients" class="tbData">
         <thead>
 
         <tr>
@@ -71,6 +74,8 @@
           <th>Tel&eacute;fono</th>
           <th>Email</th>
           <th>Usuario</th>
+          <th>Actualizar</th>
+          <th>Eliminar</th>
         </tr>
         </thead>
         <tbody>
@@ -153,9 +158,9 @@
       </div>
       <div class="row">
         <div class="col buttonsForm">
-          <button id="btnAddClient" class="btnAdd" onclick="InsertClient();"> Agregar</button>
+          <button id="btnAddClient" class="btnAdd" onclick="insertClient();"> Agregar</button>
           <button id="btnUpdateClient" class="btnUpdate" onclick="updateClient();">Actualizar</button>
-          <button id="btnDeleteClient" class="btnDelete" onclick="deleteClient();">Eliminar</button>
+
         </div>
       </div>
     </div>
